@@ -1,4 +1,4 @@
-package com.suvarnalaxmi.kfc;
+package com.preyash.kfc;
 
 import android.os.Bundle;
 
@@ -13,41 +13,46 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class fcfrag extends Fragment {
-
+public class cffrag extends Fragment {
     View view;
-    EditText etf;
-    String setf;
-    TextView tvc;
+    EditText etc;
+    String setc;
+    TextView tvf;
     Button submit;
-    float f=0,c=0;
+    float c=0,f=0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_fcfrag, container, false);
+        view = inflater.inflate(R.layout.fragment_cffrag, container, false);
 
-        etf=view.findViewById(R.id.etf);
+        etc=view.findViewById(R.id.etc);
+
+
         submit=view.findViewById(R.id.submit);
-        tvc=view.findViewById(R.id.tvc);
+        tvf=view.findViewById(R.id.tvf);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setf=etf.getText().toString();
-                if (TextUtils.isEmpty(setf)) {
-                    etf.setError("Enter value in degrees");
+                setc=etc.getText().toString();
+                if (TextUtils.isEmpty(setc)) {
+                    etc.setError("Enter value in degrees");
                     return;
                 }
                 else {
-                    f = Float.parseFloat(etf.getText().toString());
-                    c = (f - 32) * 5 / 9;
-                    tvc.setText("Degrees in Celsius: " + c);
-                    tvc.setVisibility(view.VISIBLE);
+                    c = Float.parseFloat(etc.getText().toString());
+                    f = (float) ((c * 9 / 5) + 32);
+                    tvf.setText("Degrees in fahrenheit: " + f);
+                    tvf.setVisibility(view.VISIBLE);
                 }
             }
+
         });
         return view;
     }
+
+
+
 }

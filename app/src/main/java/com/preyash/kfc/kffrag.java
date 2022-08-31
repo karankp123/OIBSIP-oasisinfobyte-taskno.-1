@@ -1,4 +1,4 @@
-package com.suvarnalaxmi.kfc;
+package com.preyash.kfc;
 
 import android.os.Bundle;
 
@@ -13,36 +13,38 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class kcfrag extends Fragment {
+public class kffrag extends Fragment {
+
     View view;
     EditText etk;
     String setk;
-    TextView tvc;
+    TextView tvf;
     Button submit;
-    float k = 0, c = 0;
+    float k = 0, f = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_kcfrag, container, false);
+        view = inflater.inflate(R.layout.fragment_kffrag, container, false);
 
         etk = view.findViewById(R.id.etk);
         submit = view.findViewById(R.id.submit);
-        tvc = view.findViewById(R.id.tvc);
+        tvf = view.findViewById(R.id.tvf);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setk = etk.getText().toString();
+                setk=etk.getText().toString();
                 if (TextUtils.isEmpty(setk)) {
                     etk.setError("Enter value in degrees");
                     return;
-                } else {
+                }
+                else {
                     k = Float.parseFloat(etk.getText().toString());
-                    c = (float) (k - 273.15);
-                    tvc.setText("Degrees in Celsius: " + c);
-                    tvc.setVisibility(view.VISIBLE);
+                    f = (float) (k - 273.15) * 9 / 5 + 32;
+                    tvf.setText("Degrees in Fahrenheit: " + f);
+                    tvf.setVisibility(view.VISIBLE);
                 }
             }
         });

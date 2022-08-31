@@ -1,4 +1,4 @@
-package com.suvarnalaxmi.kfc;
+package com.preyash.kfc;
 
 import android.os.Bundle;
 import android.app.Fragment;

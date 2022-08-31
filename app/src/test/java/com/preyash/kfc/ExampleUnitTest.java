@@ -1,4 +1,4 @@
-package com.suvarnalaxmi.kfc;
+package com.preyash.kfc;
 
 import org.junit.Test;
 

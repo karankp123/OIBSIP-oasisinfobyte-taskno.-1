@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.suvarnalaxmi.kfc'
+    namespace 'com.preyash.kfc'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.suvarnalaxmi.kfc"
+        applicationId "com.preyash.kfc"
         minSdk 24
         targetSdk 32
         versionCode 1
