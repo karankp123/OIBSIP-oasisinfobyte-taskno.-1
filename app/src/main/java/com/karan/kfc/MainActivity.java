@@ -1,4 +1,4 @@
-package com.preyash.kfc;
+package com.karan.kfc;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Fragment;

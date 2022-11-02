@@ -1,4 +1,4 @@
-package com.preyash.kfc;
+package com.karan.kfc;
 
 import android.os.Bundle;
 
@@ -13,46 +13,41 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class cffrag extends Fragment {
+public class fcfrag extends Fragment {
+
     View view;
-    EditText etc;
-    String setc;
-    TextView tvf;
+    EditText etf;
+    String setf;
+    TextView tvc;
     Button submit;
-    float c=0,f=0;
+    float f=0,c=0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_cffrag, container, false);
+        view = inflater.inflate(R.layout.fragment_fcfrag, container, false);
 
-        etc=view.findViewById(R.id.etc);
-
-
+        etf=view.findViewById(R.id.etf);
         submit=view.findViewById(R.id.submit);
-        tvf=view.findViewById(R.id.tvf);
+        tvc=view.findViewById(R.id.tvc);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setc=etc.getText().toString();
-                if (TextUtils.isEmpty(setc)) {
-                    etc.setError("Enter value in degrees");
+                setf=etf.getText().toString();
+                if (TextUtils.isEmpty(setf)) {
+                    etf.setError("Enter value in degrees");
                     return;
                 }
                 else {
-                    c = Float.parseFloat(etc.getText().toString());
-                    f = (float) ((c * 9 / 5) + 32);
-                    tvf.setText("Degrees in fahrenheit: " + f);
-                    tvf.setVisibility(view.VISIBLE);
+                    f = Float.parseFloat(etf.getText().toString());
+                    c = (f - 32) * 5 / 9;
+                    tvc.setText("Degrees in Celsius: " + c);
+                    tvc.setVisibility(view.VISIBLE);
                 }
             }
-
         });
         return view;
     }
-
-
-
 }

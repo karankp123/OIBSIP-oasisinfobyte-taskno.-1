@@ -1,4 +1,4 @@
-package com.preyash.kfc;
+package com.karan.kfc;
 
 import android.os.Bundle;
 
@@ -13,36 +13,34 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class fcfrag extends Fragment {
-
+public class kcfrag extends Fragment {
     View view;
-    EditText etf;
-    String setf;
+    EditText etk;
+    String setk;
     TextView tvc;
     Button submit;
-    float f=0,c=0;
+    float k = 0, c = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_fcfrag, container, false);
+        view = inflater.inflate(R.layout.fragment_kcfrag, container, false);
 
-        etf=view.findViewById(R.id.etf);
-        submit=view.findViewById(R.id.submit);
-        tvc=view.findViewById(R.id.tvc);
+        etk = view.findViewById(R.id.etk);
+        submit = view.findViewById(R.id.submit);
+        tvc = view.findViewById(R.id.tvc);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setf=etf.getText().toString();
-                if (TextUtils.isEmpty(setf)) {
-                    etf.setError("Enter value in degrees");
+                setk = etk.getText().toString();
+                if (TextUtils.isEmpty(setk)) {
+                    etk.setError("Enter value in degrees");
                     return;
-                }
-                else {
-                    f = Float.parseFloat(etf.getText().toString());
-                    c = (f - 32) * 5 / 9;
+                } else {
+                    k = Float.parseFloat(etk.getText().toString());
+                    c = (float) (k - 273.15);
                     tvc.setText("Degrees in Celsius: " + c);
                     tvc.setVisibility(view.VISIBLE);
                 }
